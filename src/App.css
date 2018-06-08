@@ -67,7 +67,7 @@
 }
 
 @media (max-width: 767px) {
-  .flex-container.responsive{
+  .flex-container{
     display:block;
   }
 }
@@ -81,8 +81,11 @@ label{
 textarea{
   display: block;
   width: 80vw;
+  height: 10vh;
   margin: 0 auto 4vh;
   padding: 2vh;
+  border: none;
+  background: #ecf0f1;
 }
 
 @keyframes App-logo-spin {

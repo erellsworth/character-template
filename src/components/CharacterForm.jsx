@@ -1,5 +1,6 @@
 import React from 'react';
 import reduxComponent from './reduxComponent';
+import PersonalityInput from './PersonalityInput';
 
 import {importances, personalities} from '../data';
 
@@ -13,10 +14,6 @@ class CharacterForm extends reduxComponent {
 		super(props);
 		this.state = Object.assign({}, default_state);
 	}	
-
-	updateValue(field,value){
-		super.updateValue(field,value);
-	}
 
 	clearForm(){
 		var newState = Object.assign({}, default_state);
@@ -46,21 +43,8 @@ class CharacterForm extends reduxComponent {
 		              			</h2>
 		            })}
 	            </div>
+	            <PersonalityInput/>
 
-	            <h2>Personality (<a href="https://www.16personalities.com/personality-types" rel="noopener noreferrer" target="_blank">See Here</a>)</h2>
-	            <select onChange={this.updateField.bind(this, 'personality')}>
-	              {personalities.map((p_type, index)=>{
-	                return <option key={index} value={p_type.name}>{p_type.name}</option>
-	              })}
-	            </select>
-	            <h3>Type</h3>
-	            <select onChange={this.updateField.bind(this,'personality_type')}>
-	              {personalities.filter((p_type, index)=>{
-	                return p_type.name === state.personalityInfo.personality;
-	              })[0].types.map((p_type, index)=>{
-	                return <option key={index} value={p_type.name}>{p_type.name}</option>
-	              })}
-	            </select>	
 				<h2>Narrative (<a href="https://birthmoviesdeath.com/2013/07/03/film-crit-hulk-man-of-steel" rel="noopener noreferrer" target="_blank">See here</a>)</h2>
 	            
 	            <label>WHAT DOES THIS CHARACTER WANT?</label>

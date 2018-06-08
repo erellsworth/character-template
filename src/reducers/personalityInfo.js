@@ -9,8 +9,11 @@ function personalityInfo(state = {}, action){
 	state = Object.assign(default_state, state);
 
 	var method = {
-		generate_character: function(){
-			return Object.assign(state, {generated: true});	
+		update_personality_info: function(){
+			console.log('update_personality_info');
+		    var newState = {};
+		    newState[action.field] = action.value;
+			return Object.assign(state, newState);		
 		}
 	}
 
