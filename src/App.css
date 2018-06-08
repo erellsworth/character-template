@@ -53,12 +53,17 @@
 .flex-item{
   flex-grow:1;
   flex-basis:1;
-  padding: 0 0.5em;
+  padding: 0.5em;
+  margin:0;
 }
 
 .half-width{
   width:50%;
   display:inline-block;
+}
+
+.selected{
+  background: #ccc;
 }
 
 @media (max-width: 767px) {

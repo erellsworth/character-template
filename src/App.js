@@ -1,10 +1,9 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import './colors.css';
 import reduxComponent from './components/reduxComponent';
 import Character from './components/Character';
 import CharacterForm from './components/CharacterForm';
-import {personalities, importances} from './data';
 
 class App extends reduxComponent {
 
@@ -15,9 +14,8 @@ class App extends reduxComponent {
     console.log('state', state);    
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Character Generator</h1>
+        <header className="App-header asphalt">
+          <h1 className="light-grey-text">Character Generator</h1>
         </header>
         {state.characterInfo.generated &&
           <Character />

@@ -6,12 +6,12 @@ import {importances, personalities} from '../data';
 const default_state = {
 	  	updateAction: 'update_character_info'
 	  }
-	  
+
 class CharacterForm extends reduxComponent {
 
 	constructor(props) {
-	  super(props);
-	  this.state = Object.assign({}, default_state);
+		super(props);
+		this.state = Object.assign({}, default_state);
 	}	
 
 	updateValue(field,value){
@@ -19,31 +19,41 @@ class CharacterForm extends reduxComponent {
 	}
 
 	clearForm(){
-	  var newState = Object.assign({}, default_state);
-	  this.setState(newState);     
+		var newState = Object.assign({}, default_state);
+		this.setState(newState);     
 	}
 
 	submitForm(){
-	  console.log(this.state);
-	  var newState = Object.assign({}, this.state, {character_generated: true});
-	  this.setState(newState);     
+		const { store } = this.context;
+		store.dispatch({ type: 'generate_character'});
 	}	
 
 	render(){		
 	    const { store } = this.context;
 	    var state = store.getState();		
 		return <div>
-	            {importances.map((importance, index)=>{
-	              return <p onClick={this.updateValue.bind(this, 'importance', importance)} key={index}>{importance}</p>
-	            })}
+				<div className="flex-container">
+		            {importances.map((importance, index)=>{
+		            	var class_name = 'flex-item';
+		            	if(state.characterInfo.importance === importance){
+		            		class_name += ' turquoise';
+		            	}
+		             	return <h2 
+		              			key={index}
+		              			className={class_name} 
+		              			onClick={this.updateValue.bind(this, 'importance', importance)}>
+		              				{importance}
+		              			</h2>
+		            })}
+	            </div>
 
-	            <h2>Personality Type (<a href="https://www.16personalities.com/personality-types" rel="noopener noreferrer" target="_blank">See Here</a>)</h2>
+	            <h2>Personality (<a href="https://www.16personalities.com/personality-types" rel="noopener noreferrer" target="_blank">See Here</a>)</h2>
 	            <select onChange={this.updateField.bind(this, 'personality')}>
 	              {personalities.map((p_type, index)=>{
 	                return <option key={index} value={p_type.name}>{p_type.name}</option>
 	              })}
 	            </select>
-	            <h3>sub type</h3>
+	            <h3>Type</h3>
 	            <select onChange={this.updateField.bind(this,'personality_type')}>
 	              {personalities.filter((p_type, index)=>{
 	                return p_type.name === state.personalityInfo.personality;
