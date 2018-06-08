@@ -6,7 +6,7 @@ import {importances, personalities} from '../data';
 
 const default_state = {
 	  	updateAction: 'update_character_info'
-	  }
+	  };
 
 class CharacterForm extends reduxComponent {
 
@@ -14,11 +14,6 @@ class CharacterForm extends reduxComponent {
 		super(props);
 		this.state = Object.assign({}, default_state);
 	}	
-
-	clearForm(){
-		var newState = Object.assign({}, default_state);
-		this.setState(newState);     
-	}
 
 	submitForm(){
 		const { store } = this.context;

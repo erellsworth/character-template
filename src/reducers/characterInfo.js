@@ -2,16 +2,19 @@ import {importances} from '../data';
 
 function characterInfo(state = {}, action){
 	
-	var default_state = {
+	const default_state = {
 		generated: false,
 		importance: importances[0]
 	};
 
-	state = Object.assign(default_state, state);
+	state = Object.assign({}, default_state, state);
 
 	var method = {
 		generate_character: function(){
 			return Object.assign(state, {generated: true});	
+		},
+		reset_character: function(){
+			return default_state;	
 		},
 		update_character_info: function(){
 		    var newState = {};

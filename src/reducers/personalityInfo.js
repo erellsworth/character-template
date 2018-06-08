@@ -6,9 +6,12 @@ function personalityInfo(state = {}, action){
       	personality_type:personalities[0].types[0].name,		
 	};
 
-	state = Object.assign(default_state, state);
+	state = Object.assign({}, default_state, state);
 
 	var method = {
+		reset_character: function(){
+			return default_state;	
+		},		
 		update_personality_info: function(){
 			console.log('update_personality_info');
 		    var newState = {};
