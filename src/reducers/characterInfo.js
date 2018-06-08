@@ -3,6 +3,7 @@ import {importances} from '../data';
 function characterInfo(state = {}, action){
 	
 	const default_state = {
+		name: '',
 		generated: false,
 		importance: importances[0]
 	};

@@ -10,12 +10,11 @@ class App extends reduxComponent {
   render() {
     const { store } = this.context;
     var state = store.getState();
-
-    console.log('state', state);    
+  
     return (
       <div className="App">
-        <header className="App-header asphalt">
-          <h1 className="light-grey-text">Character Generator</h1>
+        <header className="asphalt">
+          <h1 className="light-grey-text">Character Template</h1>
         </header>
         {state.characterInfo.generated &&
           <Character />

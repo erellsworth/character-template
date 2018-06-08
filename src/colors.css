@@ -1,3 +1,4 @@
+/*https://flatuicolors.com/palette/defo*/
 .turquoise{
 	background:#1abc9c;
 }
@@ -16,6 +17,7 @@
 
 .asphalt{
 	background:#34495e;
+	color:#fff;
 }
 
 .asphalt-text{
@@ -26,7 +28,8 @@
 	background:#2980b9;
 }
 
-.blue-text{
+.blue-text,
+a{
 	color:#2980b9;
 }
 

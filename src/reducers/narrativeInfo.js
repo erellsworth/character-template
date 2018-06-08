@@ -4,10 +4,11 @@ function narrativeInfo(state = {}, action){
 		reset_character: function(){
 			return {};	
 		},		
-		set_narrative_info: function(){
-			state[action.key] = action.value;
-			return state	
-		}
+		update_narrative_info: function(){
+		    var newState = {};
+		    newState[action.field] = action.value;
+			return Object.assign(state, newState);		
+		}		
 	}
 
 	if(method.hasOwnProperty(action.type)){
