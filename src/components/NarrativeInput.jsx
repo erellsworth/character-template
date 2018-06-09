@@ -1,8 +1,6 @@
 import React from 'react';
 import reduxComponent from './reduxComponent';
 
-import {importances, personalities} from '../data';
-
 const default_state = {
 	  	updateAction: 'update_narrative_info'
 	  }

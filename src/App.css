@@ -60,7 +60,8 @@ header{
 label{
   display: block;
   width: 80vw;
-  margin: 0 auto;
+  margin: 1vh auto;
+  font-weight: bold;
 }
 
 input{
@@ -90,15 +91,11 @@ button,
   border-bottom:  1px solid #7f8c8d;
   cursor: pointer;  
   margin: 1vw;
+  padding: 0.5em;  
   min-width: 90%;
 }
 
 button.flex-item, 
 .button.flex-item{
   min-width:  0;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
 }

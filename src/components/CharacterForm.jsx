@@ -24,6 +24,9 @@ class CharacterForm extends reduxComponent {
 	render(){		
 	    const { store } = this.context;
 	    var state = store.getState();		
+	    /*
+			#TODO: integrate a character name generator
+	    */
 		return <div>
 				<label>Name:</label>
 				<input type="text" onChange={this.updateField.bind(this, 'name')} value={state.characterInfo.name}/>

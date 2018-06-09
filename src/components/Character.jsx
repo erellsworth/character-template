@@ -20,7 +20,6 @@ class Character extends reduxComponent {
                             return p_type.name === state.personalityInfo.personality_type;
                           })[0];
 
-	    	
 		return <div>
             <h1>{state.characterInfo.name}</h1>
             <h2>{state.characterInfo.importance}</h2>
